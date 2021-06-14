@@ -54,14 +54,14 @@ const Login = () => {
                     <div style={{marginTop: 10, display: 'flex', justifyContent: 'center', allignItems: 'center'}}>
                         <Link to='/'>
                             <GoogleLoginButton
-                                onClick={() => window.location.assign("https://whiskeyshop-backend.azurewebsites.net" + "/authenticate/google")}
+                                onClick={() => window.location.assign("https://whiskeyshop-backend.azurewebsites.net/authenticate/google")}
                             />
                         </Link>
                     </div>
                     <div style={{marginTop: 10, display: 'flex', justifyContent: 'center', allignItems: 'center'}}>
                         <Link to='/login'>
                             <GithubLoginButton
-                                               onClick={() => window.location.assign("https://whiskeyshop-backend.azurewebsites.net" + "/authenticate/github")}
+                                               onClick={() => window.location.assign("https://whiskeyshop-backend.azurewebsites.net/authenticate/github")}
                             />
                         </Link>
                     </div>

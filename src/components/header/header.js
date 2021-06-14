@@ -6,7 +6,6 @@ import styles from './header.module.scss';
 import logo from '../../Assets/logo.jpg';
 import {LoggedContext} from "../../contexts/LoggedContext";
 import Cookies from 'js-cookie';
-import ProductService from "../../services/ProductService";
 
 const Header = () => {
 
