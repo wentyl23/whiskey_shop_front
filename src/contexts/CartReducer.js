@@ -5,13 +5,13 @@ const Storage = (cartItems) => {
 
 export const sumItems = cartItems => {
     Storage(cartItems);
-    let itemCount = cartItems.reduce((total, product) => total + product.quantity, 0);
-    let total = cartItems.reduce((total, product) => total + product.unitPrice * product.quantity, 0).toFixed(2);
+    let itemCount = cartItems.reduce((totalItems, product) => totalItems + product.quantity, 0);
+    let total = cartItems.reduce((price, product) => price + product.unitPrice * product.quantity, 0).toFixed(2);
     return { itemCount, total }
 }
 
 const decrease = (cartItems, id) => {
-    const items = cartItems.map(x => {
+    return cartItems.map(x => {
         if (x.id !== id) {
             return x
         }
@@ -20,12 +20,11 @@ const decrease = (cartItems, id) => {
             ...x,
             quantity: x.quantity-1
         }
-    });
-    return items
+    })
 }
 
 const increase = (cartItems, id) => {
-    const items = cartItems.map(x => {
+    return cartItems.map(x => {
         if (x.id !== id) {
             return x
         }
@@ -34,8 +33,7 @@ const increase = (cartItems, id) => {
             ...x,
             quantity: x.quantity+1
         }
-    });
-    return items
+    })
 }
 
 export const CartReducer = (state, action) => {
